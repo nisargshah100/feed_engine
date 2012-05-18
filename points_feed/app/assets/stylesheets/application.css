@@ -98,9 +98,22 @@ input[type=text], input[type=password], input[type=email], textarea, select {
   color: #000;
 }
 
+.display-name {
+  font-size: 20px;
+}
+
+.text-message {
+  font-size: 15px;
+  color: #333;
+}
+
 .light {
   font-size: 11px;
-  color: #333;
+  color: #AAA;
+}
+
+.icons {
+  font-size: 20px;
 }
 
 .full_width {

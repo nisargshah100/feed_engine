@@ -1,126 +1,191 @@
 <script type="text/template" id='TextItemTemplate'>
   <div class='row'>
-    <div class='span1'>
-      <img src="{{feeder.avatar}}" style='height: 50px'></img>
+    <div class='span6 well'>
+      <div class='span1' style='margin-left: -3px'>
+        <img src="{{avatar}}" style='height: 75px'></img> 
+      </div>
+      <div class='span4'>
+        {{#refeed}}
+          <span class='display-name'><a href="#">{{refeeder.display_name}}</a></span><br />
+        {{/refeed}}
+        {{^refeed}}
+          <span class='display-name'><a href="#">{{feeder.name}}</a></span><br />
+        {{/refeed}}
+        <span class='text-message'>{{text}}<br /><br /></span>
+        <span class='light'>Posted {{created_at}}</span><br />
+      </div>
+      <div class='icons' style='float: right'>
+        {{#refeedable}}
+          <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
+        {{/refeedable}}
+          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+      </div>
     </div>
-    <div style='margin-left: 100px'>
+    <div class='span2' style='margin-top: -20px'>
       {{#refeed}}
-        <span class='light'>Refeeded {{created_at}} from <a href="#">{{refeeder.display_name}}</a></span><br />
+        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br /><br />
       {{/refeed}}
-      {{^refeed}}
-        <span class='light'>Posted {{created_at}} by <a href="#">{{feeder.name}}</a></span><br />
-      {{/refeed}}
-
-      {{text}}<br /><br />
-      {{#refeedable}}
-        <span><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}">Refeed</a></span>
-      {{/refeedable}}
     </div>
   </div>
-  <hr />
 </script>
 
 <script type="text/template" id='TwitterFeedItemTemplate'>
   <div class='row'>
-    <div class='span1'>
-      <img src="{{feeder.avatar}}" style='height: 50px'></img>
+    <div class='span6 well'>
+      <div class='span1' style='margin-left: -3px'>
+        <img src="{{avatar}}" style='height: 75px'></img> 
+      </div>
+      <div class='span4'>
+        {{#refeed}}
+          <span class='display-name'><a href="#">{{refeeder.display_name}}</a></span><br />
+        {{/refeed}}
+        {{^refeed}}
+          <span class='display-name'><a href="#">{{feeder.name}}</a></span><br />
+        {{/refeed}}
+        <span class='text-message'>{{content}}<br /><br /></span>
+        <span class='light'>Posted {{created_at}} via <a href='http://www.twitter.com'>Twitter</a></span><br />
+      </div>
+      <div class='icons' style='float: right'>
+        {{#refeedable}}
+          <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
+        {{/refeedable}}
+          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+      </div>
     </div>
-    <div>
-      <div style='float:right'><img src='/assets/twitter_32.png'></img></div>
-      <span class='light'>Posted {{created_at}} by <a href="#">{{feeder.name}}</a> via twitter</span><br />
-      {{content}}
+    <div class='span1'><img src='/assets/twitter_128.png'></img></div>
+    <div class='span2' style='margin-top: -20px'>
+      {{#refeed}}
+        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      {{/refeed}}
     </div>
   </div>
-  <hr />
 </script>
 
 <script type="text/template" id='GithubFeedItemTemplate'>
   <div class='row'>
-    <div class='span1'>
-      <img src="{{feeder.avatar}}" style='height: 50px'></img>
+    <div class='span6 well'>
+      <div class='span1' style='margin-left: -3px'>
+        <img src="{{avatar}}" style='height: 75px'></img> 
+      </div>
+      <div class='span4'>
+        {{#refeed}}
+          <span class='display-name'><a href="#">{{refeeder.display_name}}</a></span><br />
+        {{/refeed}}
+        {{^refeed}}
+          <span class='display-name'><a href="#">{{feeder.name}}</a></span><br />
+        {{/refeed}}
+        <span class='text-message'>{{content}}<br /><br /></span>
+        <span class='light'>Posted {{created_at}} via <a href='http://www.github.com'>GitHub</a></span><br />
+      </div>
+      <div class='icons' style='float: right'>
+        {{#refeedable}}
+          <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
+        {{/refeedable}}
+          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+      </div>
     </div>
-    <div>
-      <div style='float:right'><img src='/assets/github_32.png'></img></div>
-      <span class='light'>Posted {{created_at}} by <a href="#">{{feeder.name}}</a> via github</span><br />
-      {{content}}
+    <div class='span1'><img src='/assets/github_128.png'></img></div>
+    <div class='span2' style='margin-top: -20px'>
+      {{#refeed}}
+        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      {{/refeed}}
     </div>
   </div>
-  <hr />
 </script>
 
 <script type="text/template" id='ImageItemTemplate'>
   <div class='row'>
-    <div class='span1'>
-      <img src="{{feeder.avatar}}" style='height: 50px'></img>
-    </div>
-    <div>
-      {{#refeed}}
-        <span class='light'>Refeeded {{created_at}} from <a href="#">{{refeeder.display_name}}</a></span><br />
-      {{/refeed}}
-      
-      {{^refeed}}
-        <span class='light'>Posted {{created_at}} by <a href="#">{{feeder.name}}</a></span><br />
-      {{/refeed}}
-      <div class='row' style='margin-top: 20px'>
-        <div class='span2'>
-        
-          <img src="{{image_url}}" rel="popover" class='span2 well popover-img'></img>
-        </div>
-        <div class='offset4'>
-          {{comment}}
-        </div>
+    <div class='span6 well'>
+      <div class='span1' style='margin-left: -3px'>
+        <img src="{{avatar}}" style='height: 75px'></img> 
       </div>
-      {{#refeedable}}
-        <span style='margin-left: 100px'><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}">Refeed</a></span>
-      {{/refeedable}}
+      <div class='span4'>
+        {{#refeed}}
+          <span class='display-name'><a href="#">{{refeeder.display_name}}</a></span><br />
+        {{/refeed}}
+        {{^refeed}}
+          <span class='display-name'><a href="#">{{feeder.name}}</a></span><br />
+        {{/refeed}}
+        <img src="{{image_url}}" style='padding: 10px 0px'></img><br />
+        <span class='text-message'>{{comment}}<br /><br /></span>
+        <span class='light'>Posted {{created_at}}</span><br />
+      </div>
+      <div class='icons' style='float: right'>
+        {{#refeedable}}
+          <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
+        {{/refeedable}}
+          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+      </div>
+    </div>
+    <div class='span2' style='margin-top: -20px'>
+      {{#refeed}}
+        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      {{/refeed}}
     </div>
   </div>
-
-  <hr />
-</script>
+</script>  
 
 <script type="text/template" id='LinkItemTemplate'>
   <div class='row'>
-    <div class='span1'>
-      <img src="{{feeder.avatar}}" style='height: 50px'></img>
+    <div class='span6 well'>
+      <div class='span1' style='margin-left: -3px'>
+        <img src="{{avatar}}" style='height: 75px'></img> 
+      </div>
+      <div class='span4'>
+        {{#refeed}}
+          <span class='display-name'><a href="#">{{refeeder.display_name}}</a></span><br />
+        {{/refeed}}
+        {{^refeed}}
+          <span class='display-name'><a href="#">{{feeder.name}}</a></span><br />
+        {{/refeed}}
+        <span class='text-message'><a href='{{link_url}}'>{{link_url}}</a><br /></span>
+        <span class='text-message'>{{text}}<br /><br /></span>
+        <span class='light'>Posted {{created_at}}</span><br />
+      </div>
+      <div class='icons' style='float: right'>
+        {{#refeedable}}
+          <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
+        {{/refeedable}}
+          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+      </div>
     </div>
-    <div style='margin-left: 100px'>
-      
+    <div class='span2' style='margin-top: -20px'>
       {{#refeed}}
-        <span class='light'>Refeeded {{created_at}} from <a href="#">{{refeeder.display_name}}</a></span><br />
+        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br /><br />
       {{/refeed}}
-      {{^refeed}}
-        <span class='light'>Posted {{created_at}} by <a href="#">{{feeder.name}}</a></span><br />
-      {{/refeed}}
-
-      {{comment}}<br /><br />
-      {{#refeedable}}
-        <span><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}">Refeed</a></span>
-      {{/refeedable}}
     </div>
   </div>
-  <hr />
 </script>
 
 <script type="text/template" id='InstagramFeedItemTemplate'>
   <div class='row'>
-  <div class='span1'>
-    <img src="{{feeder.avatar}}" style='height: 50px'></img>
-  </div>
-  <div style='margin-left: 100px'>
-    
-    {{#refeed}}
-      <span class='light'>Refeeded {{created_at}} from <a href="#">{{refeeder.display_name}}</a></span><br />
-    {{/refeed}}
-    {{^refeed}}
-      <span class='light'>Posted {{created_at}} by <a href="#">{{feeder.name}}</a></span><br />
-    {{/refeed}}
-    <img src='{{image_url}}'></img>
-    {{comment}}<br /><br />
-    {{#refeedable}}
-      <span><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}">Refeed</a></span>
-    {{/refeedable}}
+    <div class='span6 well'>
+      <div class='span1' style='margin-left: -3px'>
+        <img src="{{avatar}}" style='height: 75px'></img> 
+      </div>
+      <div class='span4'>
+        {{#refeed}}
+          <span class='display-name'><a href="#">{{refeeder.display_name}}</a></span><br />
+        {{/refeed}}
+        {{^refeed}}
+          <span class='display-name'><a href="#">{{feeder.name}}</a></span><br />
+        {{/refeed}}
+        <img src="{{image_url}}" style='padding: 10px 0px'></img><br />
+        <span class='text-message'>{{comment}}<br /><br /></span>
+        <span class='light'>Posted {{created_at}} via <a href='http://instagr.am/'>Instagram</a></span><br />
+      </div>
+      <div class='icons' style='float: right'>
+        {{#refeedable}}
+          <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
+        {{/refeedable}}
+          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+      </div>
+    </div>
+    <div class='span1'><img src='/assets/instagram_128.png'></img></div>
+    <div class='span2' style='margin-top: -20px'>
+      {{#refeed}}
+        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      {{/refeed}}
     </div>
   </div>
-  <hr />
-</script>
+</script>  

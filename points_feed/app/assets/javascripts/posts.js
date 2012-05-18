@@ -23,7 +23,11 @@ function render_post(post) {
       post['refeedable'] = true
     }
 
-    console.log(post['refeed']);
+    post['avatar'] = post['feeder']['avatar'];
+
+    if(post['refeed'] == true) { 
+      post['avatar'] = post['refeeder']['avatar'];
+    }
 
     return Mustache.render($("#"+post.type+"Template").html(), post);
   }
