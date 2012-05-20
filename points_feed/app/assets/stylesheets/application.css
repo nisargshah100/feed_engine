@@ -112,6 +112,19 @@ input[type=text], input[type=password], input[type=email], textarea, select {
   color: #AAA;
 }
 
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+}
+
+#lightbox {
+  position: fixed;
+}
+
 .icons {
   font-size: 20px;
 }
