@@ -92,6 +92,8 @@ function removeLightbox() {
     });
 }
 
+
+
 // function waypoint_reload() {
 //   console.log('ran');
 //   page_for_content++;
@@ -102,33 +104,11 @@ function removeLightbox() {
 //   $('#bottom_of_page').waypoint('destroy');
 // }
 
+
+
 $(document).ready(function() {
   fetch_posts($('#user_posts'));
 
-  $("a.lightbox").click(function(e) {
-
-    $('<div id="overlay"></div>')
-      .css('top', $(document).scrollTop())
-      .css('opacity', '0')
-      .animate({'opacity': '0.5'}, 'slow')
-      .appendTo('body');
-      
-    $('<div id="lightbox"></div>')
-      .hide()
-      .appendTo('body');
-      
-    $('<img>')
-      .attr('src', $(this).attr('href'))
-      .load(function() {
-        positionLightboxImage();
-      })
-      .click(function() {
-        removeLightbox();
-      })
-      .appendTo('#lightbox');
-    
-    return false;
-  });
 
   $("#load_more").click(function(e) {
     e.preventDefault();
@@ -153,6 +133,33 @@ $(document).ready(function() {
         alert('unable to refeed');
       }
     });
+  });
+
+  $("a.lightbox").click(function(e) {
+    console.log("BOOM")
+    $('body').css('overflow-y', 'hidden');
+    
+    $('<div id="overlay"></div>')
+      .css('top', $(document).scrollTop())
+      .css('opacity', '0')
+      .animate({'opacity': '0.5'}, 'slow')
+      .appendTo('body');
+      
+    $('<div id="lightbox"></div>')
+      .hide()
+      .appendTo('body');
+      
+    $('<img>')
+      .attr('src', $(this).attr('href'))
+      .load(function() {
+        positionLightboxImage();
+      })
+      .click(function() {
+        removeLightbox();
+      })
+      .appendTo('#lightbox');
+    
+    return false;
   });
 
 
