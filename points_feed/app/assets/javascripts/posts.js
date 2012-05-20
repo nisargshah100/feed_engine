@@ -135,8 +135,7 @@ $(document).ready(function() {
     });
   });
 
-  $("a.lightbox").click(function(e) {
-    console.log("BOOM")
+  $("a.lightbox").live('click', function(e) {
     $('body').css('overflow-y', 'hidden');
     
     $('<div id="overlay"></div>')
