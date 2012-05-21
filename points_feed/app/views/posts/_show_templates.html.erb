@@ -1,6 +1,6 @@
 <script type="text/template" id='TextItemTemplate'>
   <div class='row'>
-    <div class='span6 well'>
+    <div class='span7 well'>
       <div class='span1' style='margin-left: -3px'>
         <img src="{{avatar}}" style='height: 75px'></img> 
       </div>
@@ -18,20 +18,22 @@
         {{#refeedable}}
           <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
         {{/refeedable}}
-          <span class='exclamation'><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}">!</a></span><br />
+          <span style='font-weight:bold;'><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}">!</a></span><br />
       </div>
     </div>
-    <div class='span2' style='margin-top: -20px'>
-      {{#refeed}}
-        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br /><br />
-      {{/refeed}}
-    </div>
+    
+    {{#refeed}}
+      <div class='span7 refeed_well' style='margin-top: -20px; padding-top: -20px;'>
+      <span class='light'><i class='icon-retweet'></i> Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      </div>
+    {{/refeed}}
+    
   </div>
 </script>
 
 <script type="text/template" id='TwitterFeedItemTemplate'>
   <div class='row'>
-    <div class='span6 well'>
+    <div class='span7 well'>
       <div class='span1' style='margin-left: -3px'>
         <img src="{{avatar}}" style='height: 75px'></img> 
       </div>
@@ -49,22 +51,22 @@
         {{#refeedable}}
           <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
         {{/refeedable}}
-          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><img src='/assets/exclamation-point.png'></img></a></span><br />
-          <span><img src='/assets/twitter_25.png'></img></span>
+          <span style='font-weight:bold;'><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}">!</i></a></span><br />
+          <span><img style='padding-top:5px;' src='/assets/twitter_25.png'></img></span>
       </div>
     </div>
     
-    <div class='span2' style='margin-top: -20px'>
-      {{#refeed}}
-        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br />
-      {{/refeed}}
-    </div>
+    {{#refeed}}
+      <div class='span7 refeed_well' style='margin-top: -20px; padding-top: -20px;'>
+      <span class='light'><i class='icon-retweet'></i> Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      </div>
+    {{/refeed}}
   </div>
 </script>
 
 <script type="text/template" id='GithubFeedItemTemplate'>
   <div class='row'>
-    <div class='span6 well'>
+    <div class='span7 well'>
       <div class='span1' style='margin-left: -3px'>
         <img src="{{avatar}}" style='height: 75px'></img> 
       </div>
@@ -82,25 +84,25 @@
         {{#refeedable}}
           <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
         {{/refeedable}}
-          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+          <span style='font-weight:bold;'><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}">!</i></a></span><br />
+          <span><img style='padding-top:5px;' src='/assets/github_25.png'></img></span>
       </div>
     </div>
-    <div class='span1'><img src='/assets/github_128.png'></img></div>
-    <div class='span2' style='margin-top: -20px'>
-      {{#refeed}}
-        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br />
-      {{/refeed}}
-    </div>
+    {{#refeed}}
+      <div class='span7 refeed_well' style='margin-top: -20px; padding-top: -20px;'>
+      <span class='light'><i class='icon-retweet'></i> Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      </div>
+    {{/refeed}}
   </div>
 </script>
 
 <script type="text/template" id='ImageItemTemplate'>
   <div class='row'>
-    <div class='span6 well'>
+    <div class='span7 well'>
       <div class='span1' style='margin-left: -3px'>
         <img src="{{avatar}}" style='height: 75px'></img> 
       </div>
-      <div class='span4'>
+      <div class='span5'>
         {{#refeed}}
           <span class='display-name'><a href="#">{{refeeder.display_name}}</a></span><br />
         {{/refeed}}
@@ -115,20 +117,20 @@
         {{#refeedable}}
           <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
         {{/refeedable}}
-          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+          <span style='font-weight:bold;'><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}">!</i></a></span><br />
       </div>
     </div>
-    <div class='span2' style='margin-top: -20px'>
-      {{#refeed}}
-        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br />
-      {{/refeed}}
-    </div>
+    {{#refeed}}
+      <div class='span7 refeed_well' style='margin-top: -20px; padding-top: -20px;'>
+      <span class='light'><i class='icon-retweet'></i> Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      </div>
+    {{/refeed}}
   </div>
 </script>  
 
 <script type="text/template" id='LinkItemTemplate'>
   <div class='row'>
-    <div class='span6 well'>
+    <div class='span7 well'>
       <div class='span1' style='margin-left: -3px'>
         <img src="{{avatar}}" style='height: 75px'></img> 
       </div>
@@ -147,24 +149,24 @@
         {{#refeedable}}
           <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
         {{/refeedable}}
-          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+          <span style='font-weight:bold;'><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}">!</i></a></span><br />
       </div>
     </div>
-    <div class='span2' style='margin-top: -20px'>
-      {{#refeed}}
-        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br /><br />
-      {{/refeed}}
-    </div>
+    {{#refeed}}
+      <div class='span7 refeed_well' style='margin-top: -20px; padding-top: -20px;'>
+      <span class='light'><i class='icon-retweet'></i> Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      </div>
+    {{/refeed}}
   </div>
 </script>
 
 <script type="text/template" id='InstagramFeedItemTemplate'>
   <div class='row'>
-    <div class='span6 well'>
+    <div class='span7 well'>
       <div class='span1' style='margin-left: -3px'>
         <img src="{{avatar}}" style='height: 75px'></img> 
       </div>
-      <div class='span4'>
+      <div class='span5'>
         {{#refeed}}
           <span class='display-name'><a href="#">{{refeeder.display_name}}</a></span><br />
         {{/refeed}}
@@ -179,14 +181,14 @@
         {{#refeedable}}
           <span style=''><a href='#' class='refeed_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-retweet'></i></a></span><br />
         {{/refeedable}}
-          <span><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}"><i class='icon-thumbs-up' style='margin-top: 5px'></i></a></span><br />
+          <span style='font-weight:bold;'><a href='#' class='points_link' data-id='{{id}}' data-user="{{feeder.name}}">!</i></a></span><br />
+          <span><img style='padding-top:5px;' src='/assets/instagram_25.png'></img></span>
       </div>
     </div>
-    <div class='span1'><img src='/assets/instagram_128.png'></img></div>
-    <div class='span2' style='margin-top: -20px'>
-      {{#refeed}}
-        <span class='light'>Refeeded by <a href="#">{{feeder.name}}</a></span><br />
-      {{/refeed}}
-    </div>
+    {{#refeed}}
+      <div class='span7 refeed_well' style='margin-top: -20px; padding-top: -20px;'>
+      <span class='light'><i class='icon-retweet'></i> Refeeded by <a href="#">{{feeder.name}}</a></span><br />
+      </div>
+    {{/refeed}}
   </div>
 </script>  
