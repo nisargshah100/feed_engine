@@ -78,7 +78,7 @@ function positionLightboxImage() {
   var left = ($(window).width() - $('#lightbox').width()) / 2;
   $('#lightbox')
     .css({
-      'top': top + $(document).scrollTop(),
+      'top': top,
       'left': left
     })
     .fadeIn();
@@ -139,7 +139,7 @@ $(document).ready(function() {
     $('body').css('overflow-y', 'hidden');
     
     $('<div id="overlay"></div>')
-      .css('top', $(document).scrollTop())
+      .css('top', 'top')
       .css('opacity', '0')
       .animate({'opacity': '0.5'}, 'slow')
       .appendTo('body');
